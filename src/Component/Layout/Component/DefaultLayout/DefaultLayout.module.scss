@@ -1,0 +1,18 @@
+.wrapper{
+    display: flex;
+   align-items: center;
+   flex-direction: column;
+position: relative;
+background-color: #f1f1f1;
+}
+
+.container{
+    width: 100%;
+   display: flex;
+}
+
+.content{
+flex: 1;
+// max-height: 2000px;
+min-height: 1800px;
+}
