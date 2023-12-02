@@ -1,5 +1,7 @@
 import { React, useState } from "react";
 import PICTURE from "../../Assests/PICTURE";
+import "../../Layout/Component/Footer/index.js";
+import Footer from "../../Layout/Component/Footer/index.js";
 import "../Main/NVDIA_STORE_MAIN.scss";
 import SLIDER from "./NVDIA_STORE_MAIN_SLIDER.js";
 function NVDIA_STORE_MAIN() {
@@ -509,7 +511,7 @@ function NVDIA_STORE_MAIN() {
           </a>
         </span> */}
       </div>
-      <div id="footer">
+      {/* <div id="footer">
         <div className="container">
           <div className="footerID">
             <img src={PICTURE.nvidia} alt="NVIDIA" className="footerID-logo" />
@@ -537,8 +539,11 @@ function NVDIA_STORE_MAIN() {
             <p>Copyright © 2023 NVIDIA Corporation</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
+   
+      <Footer></Footer>
+   
     </>
   );
 }

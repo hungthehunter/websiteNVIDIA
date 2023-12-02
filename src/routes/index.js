@@ -1,6 +1,7 @@
 import HeaderOnly from "../Component/Layout/Component/HeaderOnly/index.js";
 import Login from "../Component/Page/LoginSignup/LoginSignup.js";
 import NVDIA_STORE_MAIN from "../Component/Page/Main/NVDIA_STORE_MAIN.js";
+import Policy from "../Component/Page/Policy/index.js";
 import Products from "../Component/Page/Products/Products.js";
 import Products_gtx_4080 from "../Component/Page/Products/Products_gtx_4080.js";
 import Products_gtx_4090 from "../Component/Page/Products/Products_gtx_4090.js";
@@ -49,6 +50,10 @@ const publicRoutes = [
     path:"/Products_gtx_4090",
     component: Products_gtx_4090
   },
+{
+  path:"/Policy",
+  component: Policy
+}
 ];
 
 const privateRoutes = {};
