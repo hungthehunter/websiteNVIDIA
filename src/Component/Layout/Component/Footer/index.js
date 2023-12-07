@@ -29,7 +29,7 @@ function Footer(){
                 </div>
                 <div class="footmenu">
                     <h4>HỖ TRỢ</h4>
-                    <a href="contact.html">Chính sách đổi trả & bảo hành</a>
+                    <a href="/Policy">Chính sách đổi trả & bảo hành</a>
                 </div>
                 <div class="footmenu">
                     <h4>MỞ RỘNG</h4>

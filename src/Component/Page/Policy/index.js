@@ -1,3 +1,4 @@
+import Footer from "../../Layout/Component/Footer";
 import "../Policy/Policy.scss";
 function Policy(){
     return(
@@ -6,7 +7,7 @@ function Policy(){
 
     <div className="inner">
         <div className="poclicy-detail">
-    <h2 className="heading-title">REFUND POLICY</h2>
+    <h2 className="heading-title">RETURN POLICY</h2>
         <h3 style={{display:"block"}}>1. Conditions for Exchange</h3>
     <p >- For computers and electronic devices, we apply a 15-day exchange period starting from the date the customer receives the package.</p>
     <p >- For computers and electronic devices, we apply a 15-day exchange period starting from the date the customer receives the package.</p>
@@ -34,8 +35,10 @@ function Policy(){
     <p>b. Shipping costs not supported:</p>
     <p>- For products under promotional offers, customers are required to cover the shipping cost if they wish to exchange for another product.</p>  
     </div>
+    <Footer></Footer>
     </div>
     </div>
+
 </div>
 
     )

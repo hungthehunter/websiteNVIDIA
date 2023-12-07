@@ -5,7 +5,30 @@ import "../Shop/Shop.scss";
 import Shop_Fake from "./Shop_Fake";
 function Shop(){
     const [isGridView, setGridView] = useState(true);
-  
+    const [searchItem, setSearchItem] = useState("");
+    const [categoryFilters, setCategoryFilters] = useState({
+      graphicsCards: false,
+      laptops: false,
+      studioLaptops: false,
+      gamingDesktops: false,
+      GTX4090:false,
+      GTX4080: false,
+      GTX4070Ti: false,
+      GTX4070: false,
+      GTX4060: false,
+      NVIDIA:false,
+      ACER:false,
+      ASUS:false,
+      $0_$20:false,
+      $20_$50:false,
+      Above$50:false,
+    });
+
+
+
+
+
+
     const handleGridViewClick = () => {
       setGridView(true);
       // Additional logic or state changes for grid view
@@ -15,6 +38,38 @@ function Shop(){
       setGridView(false);
       // Additional logic or state changes for list view
     };
+
+    //Handle Category checkbox
+    const handleCategoryChange = (category) => {
+      setCategoryFilters((prevFilters) => ({
+        ...prevFilters,
+        [category]: !prevFilters[category],
+      }));
+    };
+
+    const handleResetFilters = () => {
+      // Implement the logic to reset filters
+      setCategoryFilters({
+        graphicsCards: false,
+        laptops: false,
+        studioLaptops: false,
+        gamingDesktops: false,
+        GTX4090: false,
+        GTX4080: false,
+        GTX4070Ti: false,
+        GTX4070: false,
+        GTX4060: false,
+        NVIDIA: false,
+        ACER: false,
+        ASUS: false,
+        $0_$20: false,
+        $20_$50: false,
+        Above$50: false,
+      });
+    };
+
+
+
 return(
 
 <>
@@ -35,10 +90,11 @@ return(
         <form className="column grid__column-3  content-product">
           <div className="Reset-Filters">
             <input
-              type="button"
-              aria-label="Reset-Filters"
-              className="gray-button button"
-              defaultValue="Reset Filters"
+             type="button"
+             aria-label="Reset-Filters"
+             className="gray-button button"
+             onClick={handleResetFilters}
+             defaultValue="Reset-Filters"
             />
           </div>
           <ul className="Filter-list">
@@ -50,66 +106,63 @@ return(
               </div>
               <div className="filter-content">
                 <ul className="filter-values">
+                <li className="filter-value">
+                <div className="c-checkbox">
+                  <input
+                    type="checkbox"
+                    className="small-button"
+                    id="laptops"
+                    checked={categoryFilters.laptops}
+                    onChange={() => handleCategoryChange("laptops")}
+                  />
+                  <label htmlFor="laptops" className="c-checkbox__label">
+                    <span htmlFor="">GeForce Laptops</span>
+                  </label>
+                </div>
+              </li>
+                  <li className="filter-value">
+                <div className="c-checkbox">
+                  <input
+                    type="checkbox"
+                    className="small-button"
+                    id="graphicsCards"
+                    checked={categoryFilters.graphicsCards}
+                    onChange={() => handleCategoryChange("graphicsCards")}
+                  />
+                  <label htmlFor="graphicsCards" className="c-checkbox__label">
+                    <span htmlFor="">Graphics Cards</span>
+                  </label>
+                </div>
+              </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input
-                        type="checkbox"
-                        className="small-button"
-                        id="check"
+                      <input 
+                     type="checkbox"
+                     className="small-button"
+                     id="studioLaptops"
+                     checked={categoryFilters.studioLaptops}
+                     onChange={() => handleCategoryChange("studioLaptops")}
                       />
-                      <label htmlFor="check" className="c-checkbox__label">
-                        <span htmlFor="">Graphics Cards</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">GeForce Laptops</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
+                      <label htmlFor="studioLaptops" className="c-checkbox__label">
                         <span htmlFor="">NVIDIA Studio Laptops</span>
                       </label>
                     </div>
                   </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
+                      <input 
+                          type="checkbox"
+                          className="small-button"
+                          id="gamingDesktops"
+                          checked={categoryFilters.gamingDesktops}
+                          onChange={() => handleCategoryChange("gamingDesktops")}
+                      />
+                      <label htmlFor="gamingDesktops" className="c-checkbox__label">
                         <span htmlFor="">Gaming Desktops</span>
                       </label>
                     </div>
                   </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">Gaming Monitors</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">Gaming Mice</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">NVLink</span>
-                      </label>
-                    </div>
-                  </li>
+             
                 </ul>
               </div>
             </fieldset>
@@ -123,78 +176,78 @@ return(
                 <ul className="filter-values">
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input 
+                       type="checkbox"
+                       className="small-button"
+                       id="GTX4090"
+                       checked={categoryFilters.GTX4090}
+                       onChange={() => handleCategoryChange("GTX4090")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
                         <span htmlFor="">RTX 4090</span>
                       </label>
-                      <span className="float-right">(19)</span>
+                    
                     </div>
                   </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input
+                          type="checkbox"
+                          className="small-button"
+                          id="GTX4080"
+                          checked={categoryFilters.GTX4080}
+                          onChange={() => handleCategoryChange("GTX4080")} 
+                      />
                       <label htmlFor="" className="c-checkbox__label">
                         <span htmlFor="">RTX 4080</span>
                       </label>
-                      <span className="float-right">(22)</span>
+                      {/* <span className="float-right">(22)</span> */}
                     </div>
                   </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input 
+                          type="checkbox"
+                          className="small-button"
+                          id="RTX4070Ti"
+                          checked={categoryFilters.GTX4070Ti}
+                          onChange={() => handleCategoryChange("RTX4070Ti")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
                         <span htmlFor="">RTX 4070 Ti</span>
                       </label>
-                      <span className="float-right">(18)</span>
+                  
                     </div>
                   </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input 
+                        type="checkbox"
+                        className="small-button"
+                        id="RTX4070"
+                        checked={categoryFilters.GTX4070}
+                        onChange={() => handleCategoryChange("RTX4070")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
                         <span htmlFor="">RTX 4070 </span>
                       </label>
-                      <span className="float-right">(20)</span>
+             
                     </div>
                   </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input 
+                      type="checkbox"
+                      className="small-button"
+                      id="GTX4060"
+                      checked={categoryFilters.GTX4060}
+                      onChange={() => handleCategoryChange("GTX4060")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
                         <span htmlFor="">RTX 4060</span>
                       </label>
-                      <span className="float-right">(2)</span>
+             
                     </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">RTX 4050 </span>
-                      </label>
-                      <span className="float-right">(2)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">RTX 3090 Ti</span>
-                      </label>
-                      <span className="float-right">(1)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">RTX 3090</span>
-                      </label>
-                      <span className="float-right">(3)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <span className="title">Show More</span>
                   </li>
                 </ul>
               </div>
@@ -209,78 +262,56 @@ return(
                 <ul className="filter-values">
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input 
+                       type="checkbox"
+                       className="small-button"
+                       id="NVIDIA"
+                       checked={categoryFilters.NVIDIA}
+                       onChange={() => handleCategoryChange("NVIDIA")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
                         <span htmlFor="">NVIDIA</span>
                       </label>
-                      <span className="float-right">(4)</span>
+      
                     </div>
                   </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input 
+                        type="checkbox"
+                        className="small-button"
+                        id="ACER"
+                        checked={categoryFilters.ACER}
+                        onChange={() => handleCategoryChange("ACER")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
                         <span htmlFor="">ACER</span>
                       </label>
-                      <span className="float-right">(20)</span>
+          
                     </div>
                   </li>
+            
+          
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">ALIENWARE</span>
-                      </label>
-                      <span className="float-right">(4)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">AORUS</span>
-                      </label>
-                      <span className="float-right">(4)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input
+                       type="checkbox"
+                       className="small-button"
+                       id="ASUS"
+                       checked={categoryFilters.ASUS}
+                       onChange={() => handleCategoryChange("ASUS")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
                         <span htmlFor="">ASUS</span>
                       </label>
-                      <span className="float-right">(45)</span>
+                     
                     </div>
                   </li>
+           
+               
+               
                   <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">BUILD REDUX</span>
-                      </label>
-                      <span className="float-right">(3)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">CLX</span>
-                      </label>
-                      <span className="float-right">(3)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">CORSAIR</span>
-                      </label>
-                      <span className="float-right">(10)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <span className="title">Show More</span>
+                    {/* <span className="title">Show More</span> */}
                   </li>
                 </ul>
               </div>
@@ -288,152 +319,59 @@ return(
             <fieldset className="filter-item">
               <div>
                 <legend htmlFor="" className="filter-title">
-                  Screen Size
+                  Price
                 </legend>
               </div>
               <div className="filter-content">
                 <ul className="filter-values">
+        
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input 
+                      type="checkbox"
+                      className="small-button"
+                      id="$0_$20"
+                      checked={categoryFilters.$0_$20}
+                      onChange={() => handleCategoryChange("$0_$20")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">55"</span>
+                        <span htmlFor="">$0 - $20</span>
                       </label>
-                      <span className="float-right">(1)</span>
+    
                     </div>
                   </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input 
+                            type="checkbox"
+                            className="small-button"
+                            id="$20_$50"
+                            checked={categoryFilters.$20_$50}
+                            onChange={() => handleCategoryChange("$20_$50")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">43"</span>
+                        <span htmlFor="">$20 - $50</span>
                       </label>
-                      <span className="float-right">(1)</span>
+    
                     </div>
                   </li>
                   <li className="filter-value">
                     <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
+                      <input
+                          type="checkbox"
+                          className="small-button"
+                          id="Above$50"
+                          checked={categoryFilters.Above$50}
+                          onChange={() => handleCategoryChange("Above$50")}
+                      />
                       <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">38"</span>
-                      </label>
-                      <span className="float-right">(1)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">37.5"</span>
-                      </label>
-                      <span className="float-right">(3)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">35"</span>
-                      </label>
-                      <span className="float-right">(1)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">34"</span>
-                      </label>
-                      <span className="float-right">(4)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" id="" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">32"</span>
-                      </label>
-                      <span className="float-right">(2)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">28"</span>
-                      </label>
-                      <span className="float-right">(1)</span>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <span className="title">Show More</span>
-                  </li>
-                </ul>
-              </div>
-            </fieldset>
-            <fieldset className="filter-item">
-              <div>
-                <legend htmlFor="" className="filter-title">
-                  NVIDIA Technology
-                </legend>
-              </div>
-              <div className="filter-content">
-                <ul className="filter-values">
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">Reflex</span>
+                        <span htmlFor="">Above $50</span>
                       </label>
                     </div>
                   </li>
+              
                   <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">G SYNC</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">NVIDIA Studio Laptops</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">Gaming Desktops</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">Gaming Monitors</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">Gaming Mice</span>
-                      </label>
-                    </div>
-                  </li>
-                  <li className="filter-value">
-                    <div className="c-checkbox">
-                      <input type="checkbox" className="small-button" />
-                      <label htmlFor="" className="c-checkbox__label">
-                        <span htmlFor="">NVLink</span>
-                      </label>
-                    </div>
+                    {/* <span className="title">Show More</span> */}
                   </li>
                 </ul>
               </div>
@@ -443,12 +381,15 @@ return(
         <div className="column grid__column-10">
           <div className="main-container">
             <div className="form-row">
-              <div className="search-form">
-                <input
-                  type="text"
-                  className="search-input"
-                  placeholder="Example: Geforce RTX"
-                />
+            <div className="search-form">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Example: Geforce RTX"
+          spellCheck="false" 
+          value={searchItem}
+          onChange={(e) => setSearchItem(e.target.value)}
+        />
                 <button type="submit" className="submit-button">
                   <i className="fa fa-search" aria-hidden="true" />
                 </button>
@@ -470,7 +411,7 @@ return(
           <GridViewToggleButton
            isGridView={isGridView}
            handleGridViewClick={handleGridViewClick}
-           handleListViewClick={handleListViewClick}
+           searchItem={searchItem}
           />
               </div>
               <div className="total-product-list">
@@ -534,7 +475,10 @@ return(
                 </div>
               </div>
    
-           <Shop_Fake isGridView={isGridView}></Shop_Fake>
+              <Shop_Fake 
+              isGridView={isGridView} 
+              searchItem={searchItem}   
+              categoryFilters={categoryFilters}/>
             </div>
           </div>
         </div>

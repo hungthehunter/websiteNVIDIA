@@ -1,4 +1,8 @@
 import HeaderOnly from "../Component/Layout/Component/HeaderOnly/index.js";
+import orderAdmin from "../Component/Page/Admin/orderAdmin.js";
+import userAdmin from "../Component/Page/Admin/userAdmin.js";
+import CustomerAddressForm from "../Component/Page/Customer/CustomerAddressForm.js";
+import CustomerOrderDetail from "../Component/Page/Customer/CustomerOrderDetail.js";
 import Login from "../Component/Page/LoginSignup/LoginSignup.js";
 import NVDIA_STORE_MAIN from "../Component/Page/Main/NVDIA_STORE_MAIN.js";
 import Policy from "../Component/Page/Policy/index.js";
@@ -53,7 +57,24 @@ const publicRoutes = [
 {
   path:"/Policy",
   component: Policy
+},
+{
+  path:"/CustomerAddressForm",
+  component: CustomerAddressForm
+},
+{
+  path:"/CustomerOrderDetail",
+  component: CustomerOrderDetail
+},
+{
+  path:"/orderAdmin",
+  component: orderAdmin
+},
+{
+  path:"/userAdmin",
+  component: userAdmin
 }
+
 ];
 
 const privateRoutes = {};
