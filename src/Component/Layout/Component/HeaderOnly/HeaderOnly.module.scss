@@ -1,0 +1,15 @@
+.wrapper{
+    display: flex;
+
+   flex-direction: column;
+}
+
+.container{
+    width: 1150px;
+    margin-top: 65px;
+   display: flex;
+}
+
+.content{
+flex: 1;
+}
