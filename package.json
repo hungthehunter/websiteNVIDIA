@@ -1,32 +1,31 @@
 {
-<<<<<<< HEAD
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@tippyjs/react": "^4.2.6",
-    "classnames": "^2.3.2",
-    "react-icons": "^4.11.0",
-    "react-paginate": "^8.2.0"
-  },
-  "devDependencies": {
-    "@svgr/core": "^8.1.0"
-=======
-  "name": "login",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@tippyjs/react": "^4.2.6",
+    "classnames": "^2.3.2",
     "mysql2": "^3.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "react-paginate": "^8.2.0",
     "react-router-dom": "^6.16.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@svgr/core": "^8.1.0",
+    "gh-pages": "^6.1.0",
+    "sass": "^1.68.0",
+    "webpack": "^4.42.0"
+  },
+  "name": "login",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -50,10 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "sass": "^1.68.0",
-    "webpack": "^4.42.0"
->>>>>>> 7264c707bbf709c2d8b6deebd56bc7a93334a753
   }
 }
