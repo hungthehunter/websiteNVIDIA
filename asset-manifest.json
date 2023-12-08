@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/websiteNVIDIA/static/css/main.a11c7a76.css",
-    "main.js": "/websiteNVIDIA/static/js/main.dc691b55.js",
+    "main.js": "/websiteNVIDIA/static/js/main.d8eff673.js",
     "static/js/988.2a6e839f.chunk.js": "/websiteNVIDIA/static/js/988.2a6e839f.chunk.js",
     "static/media/geforce-now-evens-4c25-P@2x.jpg": "/websiteNVIDIA/static/media/geforce-now-evens-4c25-P@2x.89bbd5a376cbb306f709.jpg",
     "static/media/geforce-ada-40-series-gf-spotlight-600x338-p@2x.jpg": "/websiteNVIDIA/static/media/geforce-ada-40-series-gf-spotlight-600x338-p@2x.c28e3f241a0c7ab428e5.jpg",
@@ -43,11 +43,11 @@
     "static/media/grid-view-active.svg": "/websiteNVIDIA/static/media/grid-view-active.f31a5a1d306021d2644e.5b8f962a26e1aca7a894ebae834fa046.svg",
     "static/media/check.svg": "/websiteNVIDIA/static/media/check.6c1949ea57fb83f7eaf41da0c1203add.svg",
     "main.a11c7a76.css.map": "/websiteNVIDIA/static/css/main.a11c7a76.css.map",
-    "main.dc691b55.js.map": "/websiteNVIDIA/static/js/main.dc691b55.js.map",
+    "main.d8eff673.js.map": "/websiteNVIDIA/static/js/main.d8eff673.js.map",
     "988.2a6e839f.chunk.js.map": "/websiteNVIDIA/static/js/988.2a6e839f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a11c7a76.css",
-    "static/js/main.dc691b55.js"
+    "static/js/main.d8eff673.js"
   ]
 }
